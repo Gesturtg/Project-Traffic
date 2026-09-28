@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+scipy
+scikit-learn
+statsmodels>=0.14.6   # older versions do not import with pandas 3
+xgboost
+tensorflow            # Keras 3; on a Mac the models run on the CPU (see README)
+joblib
+jupyter

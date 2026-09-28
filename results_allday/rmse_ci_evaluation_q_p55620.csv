@@ -1,0 +1,22 @@
+,,RMSE,95% CI low,95% CI high
+all day,historical average,462.0,418.0,507.0
+all day,persistence,403.0,381.0,424.0
+all day,mlp,337.0,317.0,358.0
+all day,ridge,326.0,308.0,347.0
+all day,xgb single,306.0,286.0,328.0
+all day,xgb split (soft),305.0,285.0,325.0
+all day,xgb single + aug,300.0,282.0,320.0
+07:30–08:30,historical average,378.0,344.0,414.0
+07:30–08:30,persistence,411.0,345.0,487.0
+07:30–08:30,mlp,322.0,273.0,380.0
+07:30–08:30,ridge,304.0,262.0,353.0
+07:30–08:30,xgb single,285.0,236.0,350.0
+07:30–08:30,xgb split (soft),275.0,234.0,329.0
+07:30–08:30,xgb single + aug,268.0,232.0,316.0
+congested at t+15,historical average,651.0,577.0,723.0
+congested at t+15,persistence,623.0,556.0,692.0
+congested at t+15,mlp,548.0,484.0,616.0
+congested at t+15,ridge,543.0,483.0,606.0
+congested at t+15,xgb single,554.0,492.0,616.0
+congested at t+15,xgb split (soft),557.0,501.0,612.0
+congested at t+15,xgb single + aug,544.0,482.0,608.0

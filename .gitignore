@@ -1,0 +1,27 @@
+# ---- Data: the Trafikverket data may NOT be made public -------------------------
+dataset_for_traffic_project_assignment/
+dataset_for_traffic_project_assignment_ALLday/
+# cleaned data and feature tables (derived from the raw data)
+processed/
+processed_allday/
+# row-level predictions contain the observed flows -> also data
+results*/**/*.pkl
+
+# ---- Large or temporary files -------------------------------------------------
+# training caches (recomputed automatically, or with REFIT = True)
+models*/cache*/
+models_allday/_to_delete/
+models_allday/before_leakage_fix/
+results_allday/before_leakage_fix/
+
+# ---- Not part of the code deliverable ------------------------------------------
+# course material (dataset description)
+Folder_for_AI/
+# report draft (delete the next line to include the report)
+report/
+
+# ---- System / editor files ----------------------------------------------------
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+*.code-workspace

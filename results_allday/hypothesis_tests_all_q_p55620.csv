@@ -1,0 +1,38 @@
+H,question,test,statistic,p,effect,decision (α=0.05)
+H1,"xgb single + aug vs persistence (all day, evaluation file): A more accurate than B",paired day-level t-test (Holm),-15.63,2.720390992279498e-25,"ΔRMSE -102.6 veh/h, 95% CI [-112.7, -92.5]",reject H0
+H1,"xgb single + aug vs persistence (07:30–08:30, evaluation file): A more accurate than B",paired day-level t-test (Holm),-4.33,8.68967138935215e-05,"ΔRMSE -143.1 veh/h, 95% CI [-195.3, -103.7]",reject H0
+H1,"xgb single + aug vs historical average (all day, evaluation file): A more accurate than B",paired day-level t-test (Holm),-6.25,4.808821289897741e-08,"ΔRMSE -162.0 veh/h, 95% CI [-205.4, -122.5]",reject H0
+H2,"xgb split (soft) vs xgb single (all day, evaluation file): A ≠ B",paired day-level t-test (Holm),-1.17,0.49299745839845377,"ΔRMSE -1.7 veh/h, 95% CI [-4.4, 1.1]",do not reject H0
+H2,"xgb split (soft) vs xgb single (congested at t+15, evaluation file): A ≠ B",paired day-level t-test (Holm),0.57,0.5736885664696698,"ΔRMSE +2.6 veh/h, 95% CI [-9.8, 15.6]",do not reject H0
+H3,"xgb single + aug vs xgb single (all day, evaluation file): A ≠ B",paired day-level t-test (Holm),-2.21,0.09099021071797979,"ΔRMSE -6.4 veh/h, 95% CI [-12.3, -1.5]",do not reject H0
+H4,"xgb single + aug vs ridge (all day, evaluation file): A ≠ B",paired day-level t-test (Holm),-10.87,1.676100271898131e-16,"ΔRMSE -25.7 veh/h, 95% CI [-30.1, -21.2]",reject H0
+H4,"xgb single + aug vs mlp (all day, evaluation file): A ≠ B",paired day-level t-test (Holm),-8.93,7.924038413680631e-13,"ΔRMSE -36.6 veh/h, 95% CI [-44.2, -29.6]",reject H0
+H1,"xgb single + aug vs persistence (all day, final_evaluation file): A more accurate than B",paired day-level t-test (Holm),-17.84,6.164161457862687e-32,"ΔRMSE -99.1 veh/h, 95% CI [-107.0, -90.8]",reject H0
+H1,"xgb single + aug vs persistence (07:30–08:30, final_evaluation file): A more accurate than B",paired day-level t-test (Holm),-8.2,2.6587780120469067e-12,"ΔRMSE -99.1 veh/h, 95% CI [-119.0, -80.3]",reject H0
+H1,"xgb single + aug vs historical average (all day, final_evaluation file): A more accurate than B",paired day-level t-test (Holm),-6.03,5.82241079613575e-08,"ΔRMSE -160.3 veh/h, 95% CI [-204.3, -120.3]",reject H0
+H2,"xgb split (soft) vs xgb single (all day, final_evaluation file): A ≠ B",paired day-level t-test (Holm),1.53,0.38744877126922384,"ΔRMSE +2.7 veh/h, 95% CI [-1.0, 6.2]",do not reject H0
+H2,"xgb split (soft) vs xgb single (congested at t+15, final_evaluation file): A ≠ B",paired day-level t-test (Holm),1.53,0.38744877126922384,"ΔRMSE +13.5 veh/h, 95% CI [-1.7, 29.1]",do not reject H0
+H3,"xgb single + aug vs xgb single (all day, final_evaluation file): A ≠ B",paired day-level t-test (Holm),-0.9,0.38744877126922384,"ΔRMSE -1.1 veh/h, 95% CI [-4.0, 1.4]",do not reject H0
+H4,"xgb single + aug vs ridge (all day, final_evaluation file): A ≠ B",paired day-level t-test (Holm),-8.77,3.4035167073896095e-13,"ΔRMSE -21.9 veh/h, 95% CI [-26.9, -16.9]",reject H0
+H4,"xgb single + aug vs mlp (all day, final_evaluation file): A ≠ B",paired day-level t-test (Holm),-10.67,3.0558324407982025e-17,"ΔRMSE -30.8 veh/h, 95% CI [-36.1, -25.6]",reject H0
+H5,all models equally accurate (daily RMSE ranks)?,Friedman,352.15714285714284,5.313294897484745e-73,best mean rank: xgb single + aug (2.16); CD = 1.01,reject H0
+H6,"forecast unbiased & efficient (a=0, b=1)? — xgb single + aug, all day",Mincer–Zarnowitz Wald (HAC),3.680110648247439,0.025235837651397985,"a = 2, b = 0.996",reject H0
+H6,"forecast unbiased & efficient (a=0, b=1)? — xgb single + aug, 07:30–08:30",Mincer–Zarnowitz Wald (HAC),5.776965875471883,0.0031985717031956964,"a = 25, b = 0.980",reject H0
+H6,"forecast unbiased & efficient (a=0, b=1)? — xgb single + aug, congested at t+15",Mincer–Zarnowitz Wald (HAC),2.0923408359259508,0.12364625273313481,"a = 137, b = 0.975",do not reject H0
+H6,mean error = 0 (unbiased)?,t-test on daily mean error,1.267933842492856,0.2085457773558867,mean error +8.4 veh/h,do not reject H0
+H7,errors normal?,Jarque–Bera,105715.24046383462,0.0,"skew 0.34, excess kurtosis 10.76",reject H0
+H7,no autocorrelation at lags ≥ 3?,Ljung–Box lags 3–24,890.5473782136169,3.6011647594340173e-174,"ACF lag 3 = 0.05, lag 6 = 0.06, lag 12 = 0.05",reject H0
+H8,|error| larger in congestion?,"Mann–Whitney (rows, one-sided)",29296414.0,2.5075836209698533e-177,median |e| 268 vs 129 veh/h,reject H0
+H8,|error| larger in congestion?,"Wilcoxon, 60 days with both regimes",1787.0,6.844318178323055e-11,mean daily |e| 366 vs 186 veh/h,reject H0
+H8,equal error variance across regimes?,Brown–Forsythe,1520.0607240047816,1.73e-321,SD 543 vs 259 veh/h,reject H0
+H9,same flow distribution 2021 vs 2022 (07:30–08:30)?,KS on workday daily means,0.18933438155136267,0.1060270775675471,median 3390 vs 3406 veh/h,do not reject H0
+H9,same flow distribution 2021 vs 2022 (15:00–18:00)?,KS on workday daily means,0.17295597484276728,0.16627165461147236,median 4203 vs 4230 veh/h,do not reject H0
+H9,bias the same in every month?,Kruskal–Wallis on daily mean error,48.67035869737265,2.5915893583810642e-09,monthly mean error -42 … +100 veh/h,reject H0
+H10,xgb single + aug = xgb single under 'no failure'?,paired day-level t-test (Holm),-2.2054424580674827,0.09474337131124566,RMSE 300 vs 306 veh/h,do not reject H0
+H10,ridge + aug = ridge under 'no failure'?,paired day-level t-test (Holm),3.484955750751451,0.004031215366704688,RMSE 354 vs 326 veh/h,reject H0
+H10,xgb single + aug = xgb single under 'target portal down'?,paired day-level t-test (Holm),-8.472198140009288,6.269928714079198e-12,RMSE 307 vs 420 veh/h,reject H0
+H10,ridge + aug = ridge under 'target portal down'?,paired day-level t-test (Holm),-2.3068077895327694,0.09474337131124566,RMSE 358 vs 373 veh/h,do not reject H0
+H10,xgb single + aug = xgb single under 'all other portals down'?,paired day-level t-test (Holm),-9.924606088003477,1.235011506205644e-14,RMSE 347 vs 421 veh/h,reject H0
+H10,ridge + aug = ridge under 'all other portals down'?,paired day-level t-test (Holm),0.706905885675818,0.48170492163197387,RMSE 367 vs 360 veh/h,do not reject H0
+H10,xgb single + aug = xgb single under 'random 20 % missing'?,paired day-level t-test (Holm),-9.228406145021305,2.4398659667426416e-13,RMSE 305 vs 358 veh/h,reject H0
+H10,ridge + aug = ridge under 'random 20 % missing'?,paired day-level t-test (Holm),1.4530405392819565,0.30034654713902825,RMSE 355 vs 342 veh/h,do not reject H0
